@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability
 
-Report security problems privately by email to **jackson@ordevra.com**.
+Report security problems privately by email to **security@ordevra.com**.
 
 **Do not open a public issue, pull request or discussion** for a security problem,
 and do not include exploit details, credentials or personal data anywhere public.

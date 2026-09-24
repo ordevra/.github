@@ -7,6 +7,6 @@ Everyone who works in or contributes to Ordevra repositories is expected to:
 - Keep other people's information private, including client and personal data.
 - Not harass, demean or exclude anyone.
 
-Report conduct problems privately to **jackson@ordevra.com**. Reports are handled
+Report conduct problems privately to **security@ordevra.com**. Reports are handled
 confidentially. Anyone who breaks these expectations may be asked to stop, or lose
 access to the organization's repositories.
