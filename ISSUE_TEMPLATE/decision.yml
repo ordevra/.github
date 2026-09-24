@@ -1,0 +1,65 @@
+name: Decision
+description: Record a decision that needs owner sign-off before work proceeds.
+title: "decision: "
+labels: ["decision"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when work is blocked on a choice only the owner can make: scope, spending,
+        access, anything irreversible or anything said to people outside the company.
+        Give real options; an option nobody would pick is padding.
+  - type: textarea
+    id: question
+    attributes:
+      label: Decision needed
+      description: The question, in one or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why this is needed now, the evidence, and what is blocked until it is made.
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options
+      description: Each option with its cost, risk and what it rules out.
+      placeholder: |
+        A.
+        B.
+        C. Do nothing:
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation
+      description: Which option and why.
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Decide by
+      description: Date (YYYY-MM-DD) and what happens if it passes without a decision.
+    validations:
+      required: true
+  - type: dropdown
+    id: reversibility
+    attributes:
+      label: Reversibility
+      options:
+        - Easily reversed
+        - Reversible with effort
+        - Irreversible
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: Left blank when filed. The owner records the decision and date here, or in a comment.

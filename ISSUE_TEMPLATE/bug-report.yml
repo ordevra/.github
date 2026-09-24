@@ -1,0 +1,57 @@
+name: Bug report
+description: Something that worked, or should work, does not.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste secrets, credentials, tokens, personal data or client data into this issue.
+        Security problems go through SECURITY.md, not an issue.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Describe the failure and where you saw it.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The smallest sequence that shows the problem.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Error text, log excerpt or screenshot, with anything sensitive removed.
+      render: text
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - Blocks work or affects a live service
+        - Degraded, with a workaround
+        - Minor or cosmetic
+    validations:
+      required: true
+  - type: checkboxes
+    id: data-check
+    attributes:
+      label: Data check
+      options:
+        - label: This issue contains no secrets, credentials, personal data or client data.
+          required: true
