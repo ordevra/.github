@@ -21,3 +21,10 @@
 ## Decisions needed
 
 <!-- Decisions the owner must make before or after merge. State "None" when there are none. -->
+
+## Documentation impact
+
+<!-- Use updated or none. Name changed Markdown paths and explain what changed;
+     for none, explain why existing requirements, decisions, issues and handoff remain accurate. -->
+Documentation impact: <updated or none>
+Documentation details: <specific explanation>

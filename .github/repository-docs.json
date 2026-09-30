@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "documents": {
+    "requirements": "docs/repository/requirements.md",
+    "decisions": "docs/repository/decisions.md",
+    "known-issues": "docs/repository/known-issues.md",
+    "progress": "docs/repository/progress.md"
+  }
+}
