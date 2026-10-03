@@ -1,4 +1,4 @@
-"""Repository documentation check, version 1.0 (Python standard library only).
+"""Repository documentation check, version 1.1 (Python standard library only).
 
 Maintained with the repository procedure templates. Run from repository root.
 PR text is data: never execute it. This checks structure, not the author's judgment.
@@ -32,8 +32,8 @@ def validate_documents(root):
 def validate_impact(body, changed):
     # Ignore the template's instructional comments, including multiline comments.
     body = re.sub(r"<!--.*?-->", "", body or "", flags=re.S)
-    modes = re.findall(r"^Documentation impact:\s*(.*?)\s*$", body, flags=re.M)
-    details = re.findall(r"^Documentation details:\s*(.*?)\s*$", body, flags=re.M)
+    modes = re.findall(r"^Documentation impact:[ \t]*(.*?)[ \t]*\r?$", body, flags=re.M)
+    details = re.findall(r"^Documentation details:[ \t]*(.*?)[ \t]*\r?$", body, flags=re.M)
     if len(modes) != 1 or modes[0] not in ("updated", "none") or len(details) != 1:
         raise ValueError("Use exactly one 'Documentation impact: updated|none' and 'Documentation details: <explanation>' line.")
     detail = details[0]

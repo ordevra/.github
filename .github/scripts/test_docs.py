@@ -34,6 +34,14 @@ class AssessmentTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             check.validate_impact("Documentation impact: updated\nDocumentation details: .github/pull_request_template.md was changed for this work.", [".github/pull_request_template.md"])
 
+    def test_assessment_fields_stay_on_one_line(self):
+        for body in (
+            "Documentation impact: none\nDocumentation details:\nUnrelated paragraph with enough characters.",
+            "Documentation impact:\nnone\nDocumentation details: A complete explanation of an internal refactor.",
+        ):
+            with self.subTest(body=body), self.assertRaises(ValueError):
+                check.validate_impact(body, [])
+
     def test_document_contract_and_escape(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

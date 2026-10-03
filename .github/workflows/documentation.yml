@@ -1,0 +1,37 @@
+name: Documentation assessment
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: documentation-assessment-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  documentation:
+    name: Documentation assessment
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Run assessment contract tests
+        run: python .github/scripts/test_docs.py
+      - name: Check repository documentation
+        run: python .github/scripts/check_docs.py
+      - name: Check pull request assessment
+        if: github.event_name == 'pull_request'
+        run: python .github/scripts/check_docs.py --event "$GITHUB_EVENT_PATH"
