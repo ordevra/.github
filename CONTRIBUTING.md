@@ -34,3 +34,11 @@ not remove it from history.
 Blank issues are disabled. Use the bug report, task or decision form. A decision
 issue records a choice that needs owner sign-off: the options, a recommendation
 and a deadline.
+
+## Shared repository documentation
+
+Each repository maintains one canonical requirements, decisions, known-issues and progress set, linked from its contributor instructions. Everyone updates the same sources through PRs; do not add per-engineer copies. Existing equivalent documents may be mapped instead of duplicated.
+
+Assess documentation impact on every PR. Use `Documentation impact: updated` and name changed Markdown paths in `Documentation details:`, or use `Documentation impact: none` with a specific explanation. Update only affected authorities. Reviewers assess accuracy; CI checks the assessment structure. Preserve decision history, link issue/evidence records, and distinguish implemented, tested and deployed. A green check does not authorize production changes.
+
+Local repository instructions define any scoped publishing exceptions. The public defaults contain no private organization context. New repositories should adopt this procedure, four populated context documents and the documentation assessment workflow. The maintained public check source is `.github/scripts/check_docs.py` with contract tests in `.github/scripts/test_docs.py`; versioned copies require explicit update PRs. Configure the Documentation assessment status as required through the repository's existing branch rules after adoption; workflows alone do not enforce merge protection.
