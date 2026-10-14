@@ -1,0 +1,11 @@
+# Proposed ongoing review ownership. See the main repository activation record.
+# Owners are account routing targets, not proof of human qualification.
+* @ORD-OWNER @parkerordevra
+
+# Keep review controls owned. The PR base version governs each PR.
+/.github/ @ORD-OWNER @parkerordevra
+/AGENTS.md @ORD-OWNER @parkerordevra
+/CLAUDE.md @ORD-OWNER @parkerordevra
+/scripts/ @ORD-OWNER @parkerordevra
+/internal-tools/ @ORD-OWNER @parkerordevra
+/operations/ @ORD-OWNER @parkerordevra
